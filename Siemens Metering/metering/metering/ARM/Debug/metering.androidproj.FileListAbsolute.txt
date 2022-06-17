@@ -1,0 +1,12 @@
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\metering.androidproj.AssemblyReference.cache
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\metering.apk.recipe
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\metering.apk.recipe.merged
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\Package\libs\armeabi-v7a\gdbserver
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\Package\res\values\strings.xml
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\Package\src\com\metering\metering.java
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\Package\AndroidManifest.xml
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\Package\project.properties
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\Package\build.xml
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\FileStringReplace.incremental
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\metering.apk
+C:\Users\z00470na\source\repos\metering\metering\ARM\Debug\metering.lastsuccessfuldeploy
