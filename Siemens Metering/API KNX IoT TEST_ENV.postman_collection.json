@@ -1,0 +1,1904 @@
+{
+	"info": {
+		"_postman_id": "1895d583-52e7-42ce-b13a-3ff51304c4de",
+		"name": "API KNX IoT TEST_ENV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "KNX",
+			"item": [
+				{
+					"name": ".well-known/knx",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204, 207])\r",
+									"});\r",
+									"\r",
+									"const wk_auto_schema = {\r",
+									"\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+									"    \"default\": {},\r",
+									"    \"examples\": [\r",
+									"        {\r",
+									"            \"api\": {\r",
+									"                \"version\": \"1.0\",\r",
+									"                \"base\": \"api\"\r",
+									"            },\r",
+									"            \"links\": [\r",
+									"                {\r",
+									"                    \"rel\": \"node\",\r",
+									"                    \"href\": \"/node/\",\r",
+									"                    \"definedby\": \"http://schema.knx.org/2020/ontology/v1#\",\r",
+									"                    \"type\": \"application/vnd.api+json\"\r",
+									"                },\r",
+									"                {\r",
+									"                    \"rel\": \"gateway\",\r",
+									"                    \"href\": \"/devices/\",\r",
+									"                    \"definedby\": \"http://schema.knx.org/2020/ontology/v1#\",\r",
+									"                    \"type\": \"application/vnd.api+json\"\r",
+									"                },\r",
+									"                {\r",
+									"                    \"rel\": \"device\",\r",
+									"                    \"href\": \"/devices/\",\r",
+									"                    \"definedby\": \"http://schema.knx.org/2020/ontology/v1#\",\r",
+									"                    \"type\": \"application/vnd.api+json\"\r",
+									"                },\r",
+									"                {\r",
+									"                    \"rel\": \"datapoint\",\r",
+									"                    \"href\": \"/datapoints/\",\r",
+									"                    \"definedby\": \"http://schema.knx.org/2020/ontology/v1#\",\r",
+									"                    \"type\": \"application/vnd.api+json\"\r",
+									"                }\r",
+									"            ]\r",
+									"        }\r",
+									"    ],\r",
+									"    \"required\": [\r",
+									"        \"api\",\r",
+									"        \"links\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"api\": {\r",
+									"            \"$id\": \"#/properties/api\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The api schema\",\r",
+									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"            \"default\": {},\r",
+									"            \"examples\": [\r",
+									"                {\r",
+									"                    \"version\": \"1.0\",\r",
+									"                    \"base\": \"api\"\r",
+									"                }\r",
+									"            ],\r",
+									"            \"required\": [\r",
+									"                \"version\",\r",
+									"                \"base\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"version\": {\r",
+									"                    \"$id\": \"#/properties/api/properties/version\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The version schema\",\r",
+									"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                    \"default\": \"\",\r",
+									"                    \"examples\": [\r",
+									"                        \"1.0\"\r",
+									"                    ]\r",
+									"                },\r",
+									"                \"base\": {\r",
+									"                    \"$id\": \"#/properties/api/properties/base\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The base schema\",\r",
+									"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                    \"default\": \"\",\r",
+									"                    \"examples\": [\r",
+									"                        \"api\"\r",
+									"                    ]\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        },\r",
+									"        \"links\": {\r",
+									"            \"$id\": \"#/properties/links\",\r",
+									"            \"type\": \"array\",\r",
+									"            \"title\": \"The links schema\",\r",
+									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"            \"default\": [],\r",
+									"            \"examples\": [\r",
+									"                [\r",
+									"                    {\r",
+									"                        \"rel\": \"node\",\r",
+									"                        \"href\": \"/node/\",\r",
+									"                        \"definedby\": \"http://schema.knx.org/2020/ontology/v1#\",\r",
+									"                        \"type\": \"application/vnd.api+json\"\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"rel\": \"gateway\",\r",
+									"                        \"href\": \"/devices/\",\r",
+									"                        \"definedby\": \"http://schema.knx.org/2020/ontology/v1#\",\r",
+									"                        \"type\": \"application/vnd.api+json\"\r",
+									"                    }\r",
+									"                ]\r",
+									"            ],\r",
+									"            \"additionalItems\": true,\r",
+									"            \"items\": {\r",
+									"                \"$id\": \"#/properties/links/items\",\r",
+									"                \"anyOf\": [\r",
+									"                    {\r",
+									"                        \"$id\": \"#/properties/links/items/anyOf/0\",\r",
+									"                        \"type\": \"object\",\r",
+									"                        \"title\": \"The first anyOf schema\",\r",
+									"                        \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                        \"default\": {},\r",
+									"                        \"examples\": [\r",
+									"                            {\r",
+									"                                \"rel\": \"node\",\r",
+									"                                \"href\": \"/node/\",\r",
+									"                                \"definedby\": \"http://schema.knx.org/2020/ontology/v1#\",\r",
+									"                                \"type\": \"application/vnd.api+json\"\r",
+									"                            }\r",
+									"                        ],\r",
+									"                        \"required\": [\r",
+									"                            \"rel\",\r",
+									"                            \"href\",\r",
+									"                            \"definedby\",\r",
+									"                            \"type\"\r",
+									"                        ],\r",
+									"                        \"properties\": {\r",
+									"                            \"rel\": {\r",
+									"                                \"$id\": \"#/properties/links/items/anyOf/0/properties/rel\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The rel schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"node\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"href\": {\r",
+									"                                \"$id\": \"#/properties/links/items/anyOf/0/properties/href\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The href schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"/node/\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"definedby\": {\r",
+									"                                \"$id\": \"#/properties/links/items/anyOf/0/properties/definedby\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The definedby schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"http://schema.knx.org/2020/ontology/v1#\"\r",
+									"                                ]\r",
+									"                            },\r",
+									"                            \"type\": {\r",
+									"                                \"$id\": \"#/properties/links/items/anyOf/0/properties/type\",\r",
+									"                                \"type\": \"string\",\r",
+									"                                \"title\": \"The type schema\",\r",
+									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"                                \"default\": \"\",\r",
+									"                                \"examples\": [\r",
+									"                                    \"application/vnd.api+json\"\r",
+									"                                ]\r",
+									"                            }\r",
+									"                        },\r",
+									"                        \"additionalProperties\": true\r",
+									"                    }\r",
+									"                ]\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"}\r",
+									"\r",
+									"const wk_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"api\":{ \r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"version\": {\"type\": \"string\"},\r",
+									"                \"base\": {\"type\": \"string\"}\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {            \r",
+									"        \"links\":{ \r",
+									"                \"type\": \"array\",\r",
+									"                \"minItems\": 1,\r",
+									"                \"maxItems\": 4,\r",
+									"                \"items\": {\r",
+									"                    \"type\": \"object\",\r",
+									"                    \"properties\": {\r",
+									"                        \"rel\": {\"type\": \"string\"},\r",
+									"                        \"href\": {\"type\": \"string\"},\r",
+									"                        \"definedby\": {\"type\": \"string\"},\r",
+									"                        \"type\": {\"type\": \"string\"}\r",
+									"                    },\r",
+									"                    \"required\": [\"rel\",\"href\",\"definedby\",\"type\"]\r",
+									"                }\r",
+									"                    \r",
+									"        }             \r",
+									"    },\r",
+									"    \"required\": [\"api\",\"links\"]\r",
+									"    }\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(wk_auto_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/.well-known/knx/",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								".well-known",
+								"knx",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "node",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204, 207])\r",
+									"});\r",
+									"\r",
+									"const node_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"data\":{ \r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"id\": {\"type\": \"string\"},\r",
+									"                \"type\": {\"type\": \"string\"},\r",
+									"                \"attributes\":{\r",
+									"                \"type\": \"object\",\r",
+									"                    \"properties\": {\r",
+									"                        \"title\": {\"type\": \"string\"},\r",
+									"                        \"manufacturer\": {\"type\": \"string\"},\r",
+									"                        \"model\": {\"type\": \"string\"},\r",
+									"                        \"description\": {\"type\": \"string\"},\r",
+									"                        \"serialNumber\": {\"type\": \"string\"},\r",
+									"                        \"version\":{\r",
+									"                        \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"firmware\": {\"type\": \"string\"},\r",
+									"                            },\r",
+									"                            \"required\": [\"firmware\"]\r",
+									"                        } \r",
+									"                    },\r",
+									"                    \"required\": [\"title\",\"manufacturer\",\"model\",\"description\",\"serialNumber\",\"version\"] \r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\"id\",\"type\",\"attributes\"]\r",
+									"        },\r",
+									"    },\r",
+									"    \"required\": [\"data\"]\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(node_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/node",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204, 207])\r",
+									"});\r",
+									"\r",
+									"const dev_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"meta\":{ \r",
+									"            \"type\": \"object\",\r",
+									"            \"collection\": {\r",
+									"                \"offset\": {\"type\": \"number\"},\r",
+									"                \"items\": {\"type\": \"number\"},\r",
+									"                \"total\": {\"type\": \"number\"}\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {            \r",
+									"        \"data\":{ \r",
+									"                \"type\": \"array\",\r",
+									"                \"minItems\": 0,\r",
+									"                \"maxItems\": 65356,\r",
+									"                \"items\": {\r",
+									"                    \"type\": \"object\",\r",
+									"                    \"properties\": {\r",
+									"                        \"id\": {\"type\": \"string\"},\r",
+									"                        \"type\": {\"type\": \"string\"},\r",
+									"                        \"attributes\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"title\": {\"type\": \"string\"},\r",
+									"                                \"manufacturer\": {\"type\": \"string\"},\r",
+									"                                \"model\": {\"type\": \"string\"},\r",
+									"                                \"description\": {\"type\": \"string\"},\r",
+									"                                \"serialNumber\": {\"type\": \"string\"},\r",
+									"                                \"currentDate\": {\"type\": \"string\"},\r",
+									"                                \"version\": {\r",
+									"                                    \"type\": \"object\",\r",
+									"                                    \"properties\": {\r",
+									"                                        \"firmware\": {\"type\": \"string\"}\r",
+									"                                    }\r",
+									"                                }\r",
+									"                            },\r",
+									"                            \"required\": [\"title\",\"serialNumber\"]\r",
+									"                        },                    \r",
+									"                    },\r",
+									"                    \"required\": [\"id\",\"type\",\"attributes\"]\r",
+									"                }                    \r",
+									"        }             \r",
+									"    },\r",
+									"    \"required\": [\"meta\",\"data\"]\r",
+									"    }\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(dev_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices?page[offset]=0&page[limit]",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "page[offset]",
+									"value": "0"
+								},
+								{
+									"key": "page[limit]",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204, 207])\r",
+									"});\r",
+									"\r",
+									"const dev_id_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {            \r",
+									"        \"data\":{ \r",
+									"                \"type\": \"object\",\r",
+									"                \"properties\": {\r",
+									"                        \"id\": {\"type\": \"string\"},\r",
+									"                        \"type\": {\"type\": \"string\"},\r",
+									"                        \"attributes\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"title\": {\"type\": \"string\"},\r",
+									"                                \"name\": {\"type\": \"string\"},\r",
+									"                                \"manufacturer\": {\"type\": \"string\"},\r",
+									"                                \"model\": {\"type\": \"string\"},\r",
+									"                                \"oms:identificationNumber\": {\"type\": \"string\"},\r",
+									"                                \"oms:manufacturerId\": {\"type\": \"string\"},\r",
+									"                                \"oms:meteringDeviceType\": {\"type\": \"string\"},\r",
+									"                                \"serialNumber\": {\"type\": \"string\"},\r",
+									"                                \"oms:deviceStatus\": {\"type\": \"number\"},\r",
+									"                                \"oms:deviceStatusDate\": {\"type\": \"string\"},\r",
+									"                                \"assignedTrade\": {\"type\": \"string\"}\r",
+									"                            }\r",
+									"                        },\r",
+									"                        \"meta\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"@type\": {\"type\": \"string\"}\r",
+									"                            }\r",
+									"                        }                   \r",
+									"                },\r",
+									"                \"required\": [\"id\",\"type\",\"attributes\",\"meta\"]                                    \r",
+									"            }                                \r",
+									"    },\r",
+									"    \"required\": [\"data\"]               \r",
+									"}\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(dev_id_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices/{id}/datapoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204, 207])\r",
+									"});\r",
+									"\r",
+									"const dev_dp_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"meta\":{ \r",
+									"            \"type\": \"object\",\r",
+									"            \"collection\": {\r",
+									"                \"offset\": {\"type\": \"number\"},\r",
+									"                \"items\": {\"type\": \"number\"},\r",
+									"                \"total\": {\"type\": \"number\"}\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {            \r",
+									"        \"data\":{ \r",
+									"                \"type\": \"array\",\r",
+									"                \"minItems\": 0,\r",
+									"                \"maxItems\": 65356,\r",
+									"                \"items\": {\r",
+									"                    \"type\": \"object\",\r",
+									"                    \"properties\": {\r",
+									"                        \"id\": {\"type\": \"string\"},\r",
+									"                        \"type\": {\"type\": \"string\"},\r",
+									"                        \"meta\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"@type\": {\"type\": \"string\"}                               \r",
+									"                            }\r",
+									"                        },\r",
+									"                        \"attributes\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"title\": {\"type\": \"string\"},\r",
+									"                                \"readable\": {\"type\": \"boolean\"},\r",
+									"                                \"writable\": {\"type\": \"boolean\"},\r",
+									"                                \"valueType\": {\"type\": \"string\"},\r",
+									"                                \"value\": {\"type\": [\"string\",\"number\"]},\r",
+									"                                \"unit\": {\"type\": \"string\"},\r",
+									"                                \"timestamp\": {\"type\": \"string\"},\r",
+									"                                \"hasProtocolMapping\": {\"type\": \"string\"}                                                         \r",
+									"                            },    \r",
+									"                            \"required\": [\"title\",\"readable\",\"writable\",\"valueType\",\"hasProtocolMapping\"]\r",
+									"                        }                   \r",
+									"                    },\r",
+									"                    \"required\": [\"id\",\"type\",\"attributes\"]\r",
+									"                }                               \r",
+									"        }             \r",
+									"    },\r",
+									"    \"required\": [\"meta\",\"data\"]    \r",
+									"}\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(dev_dp_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}/datapoints",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}",
+								"datapoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "datapoints/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204, 207])\r",
+									"});\r",
+									"\r",
+									"const dp_id_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {            \r",
+									"        \"data\":{ \r",
+									"                \"type\": \"object\",\r",
+									"                \"properties\": {\r",
+									"                        \"id\": {\"type\": \"string\"},\r",
+									"                        \"type\": {\"type\": \"string\"},\r",
+									"                        \"meta\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"@type\": {\"type\": \"string\"}\r",
+									"                            }\r",
+									"                        },\r",
+									"                        \"attributes\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"title\": {\"type\": \"string\"},\r",
+									"                                \"readable\": {\"type\": \"boolean\"},\r",
+									"                                \"writable\": {\"type\": \"boolean\"},\r",
+									"                                \"valueType\": {\"type\": \"string\"},\r",
+									"                                \"value\": {\"type\": [\"string\",\"number\"]},\r",
+									"                                \"unit\": {\"type\": \"string\"},\r",
+									"                                \"timestamp\": {\"type\": \"string\"},\r",
+									"                                \"hasProtocolMapping\": {\"type\": \"string\"}                                                         \r",
+									"                            },    \r",
+									"                            \"required\": [\"title\",\"readable\",\"writable\",\"valueType\",\"hasProtocolMapping\"]\r",
+									"                        }                   \r",
+									"                    },\r",
+									"                    \"required\": [\"id\",\"type\",\"attributes\"]\r",
+									"        }                            \r",
+									"    },\r",
+									"    \"required\": [\"data\"]    \r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(dp_id_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/datapoints/{{DP_ID}}",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"datapoints",
+								"{{DP_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "datapoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204, 207])\r",
+									"});\r",
+									"\r",
+									"const dp_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"meta\":{ \r",
+									"            \"type\": \"object\",\r",
+									"            \"collection\": {\r",
+									"                \"offset\": {\"type\": \"number\"},\r",
+									"                \"items\": {\"type\": \"number\"},\r",
+									"                \"total\": {\"type\": \"number\"}\r",
+									"            }\r",
+									"        }\r",
+									"    },    \r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {            \r",
+									"        \"data\":{ \r",
+									"                \"type\": \"array\",\r",
+									"                \"minItems\": 0,\r",
+									"                \"maxItems\": 100,\r",
+									"                \"items\": {\r",
+									"                    \"type\": \"object\",\r",
+									"                    \"properties\": {\r",
+									"                        \"id\": {\"type\": \"string\"},\r",
+									"                        \"type\": {\"type\": \"string\"},\r",
+									"                        \"meta\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"@type\": {\"type\": \"string\"}\r",
+									"                            }\r",
+									"                        },\r",
+									"                        \"attributes\": {\r",
+									"                            \"type\": \"object\",\r",
+									"                            \"properties\": {\r",
+									"                                \"title\": {\"type\": \"string\"},\r",
+									"                                \"readable\": {\"type\": \"boolean\"},\r",
+									"                                \"writable\": {\"type\": \"boolean\"},\r",
+									"                                \"valueType\": {\"type\": \"string\"},\r",
+									"                                \"value\": {\"type\": [\"string\",\"number\"]},\r",
+									"                                \"unit\": {\"type\": \"string\"},\r",
+									"                                \"timestamp\": {\"type\": \"string\"},\r",
+									"                                \"hasProtocolMapping\": {\"type\": \"string\"}                                                         \r",
+									"                            },    \r",
+									"                            \"required\": [\"title\",\"readable\",\"writable\",\"valueType\",\"hasProtocolMapping\"]\r",
+									"                        }                   \r",
+									"                    },\r",
+									"                    \"required\": [\"id\",\"type\",\"attributes\"]\r",
+									"                }\r",
+									"        }                            \r",
+									"    },\r",
+									"    \"required\": [\"data\"]    \r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(dp_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/datapoints?page[offset]=0&page[limit]=",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"datapoints"
+							],
+							"query": [
+								{
+									"key": "page[offset]",
+									"value": "0"
+								},
+								{
+									"key": "page[limit]",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "err_test no params | devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test no params | devices/{id}/datapoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}/datapoints",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}",
+								"datapoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 406 | .well-known/knx",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 406\", function () {\r",
+									"    pm.response.to.have.status(406);\r",
+									"});\r",
+									"\r",
+									"const err406_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err406_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{Accept}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/.well-known/knx/",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								".well-known",
+								"knx",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 406 | node",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 406\", function () {\r",
+									"    pm.response.to.have.status(406);\r",
+									"});\r",
+									"\r",
+									"const err406_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err406_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "{{Accept}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/node",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 406 | devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 406\", function () {\r",
+									"    pm.response.to.have.status(406);\r",
+									"});\r",
+									"\r",
+									"const err406_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err406_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "{{Accept}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices?page[offset]=0&page[limit]",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "page[offset]",
+									"value": "0"
+								},
+								{
+									"key": "page[limit]",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 406 | devices/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 406\", function () {\r",
+									"    pm.response.to.have.status(406);\r",
+									"});\r",
+									"\r",
+									"const err406_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err406_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "{{Accept}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 406 | devices/{id}/datapoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 406\", function () {\r",
+									"    pm.response.to.have.status(406);\r",
+									"});\r",
+									"\r",
+									"const err406_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err406_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bWFuZnJlZDpOUGFCRW1wVVNRR2d2S3lVUWNXZzg4VWRzWVNnVVIydXZKUGRERTV5",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "{{Accept}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}/datapoints?page[limit]=&page[offset]=",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}",
+								"datapoints"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": ""
+								},
+								{
+									"key": "page[offset]",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 400 bad params | devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices?page[offset]=A&page[limit]='?",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "page[offset]",
+									"value": "A"
+								},
+								{
+									"key": "page[limit]",
+									"value": "'?"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 400 bad params | devices/{id}/datapoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}/datapoints?page[offset]=fd&page[limit]=?.",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}",
+								"datapoints"
+							],
+							"query": [
+								{
+									"key": "page[offset]",
+									"value": "fd"
+								},
+								{
+									"key": "page[limit]",
+									"value": "?."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 401 unauthorized | node",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bad auth token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/node",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 401 unauthorized | devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bad auth token",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices?page[offset]=0&page[limit]",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "page[offset]",
+									"value": "0"
+								},
+								{
+									"key": "page[limit]",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 401 unauthorized | devices/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bad auth token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 401 unauthorized | devices/{id}/datapoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bad auth token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/{{ID}}/datapoints?page[limit]=0&page[offset]=",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"{{ID}}",
+								"datapoints"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": "0"
+								},
+								{
+									"key": "page[offset]",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 404 bad ID | devices/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/c088cabd-615b-5708-95cc-fake_id",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"c088cabd-615b-5708-95cc-fake_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 404 bad ID | devices/{id}/datapoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/devices/64cb0b27-3791-5295-8304-fake_id/datapoints?page[limit]=&page[offset]=",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"devices",
+								"64cb0b27-3791-5295-8304-fake_id",
+								"datapoints"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": ""
+								},
+								{
+									"key": "page[offset]",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 404 wrong uri | generic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/fake_uri",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"fake_uri"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "err_test 500 Internal server error | generic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"const err_schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"errors\":{ \r",
+									"            \"type\": \"array\",\r",
+									"            \"properties\": {\r",
+									"                \"title\": {\"type\": \"string\"},\r",
+									"                \"status\": {\"type\": \"number\"},\r",
+									"                \"detail\": {\"type\": \"string\"}\r",
+									"            },        \r",
+									"            \"required\": [\"title\",\"status\",\"detail\"] \r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Validate schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(err_schema);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Protocol}}://{{DNS}}/api/err_test_500",
+							"protocol": "{{Protocol}}",
+							"host": [
+								"{{DNS}}"
+							],
+							"path": [
+								"api",
+								"err_test_500"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
