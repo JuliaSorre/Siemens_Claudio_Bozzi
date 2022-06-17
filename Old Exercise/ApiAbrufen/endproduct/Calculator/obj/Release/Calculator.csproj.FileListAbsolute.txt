@@ -1,0 +1,15 @@
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\bin\Release\Calculator.exe.config
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\bin\Release\Calculator.exe
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\bin\Release\Calculator.pdb
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator.csproj.AssemblyReference.cache
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\MainWindow.g.cs
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\App.g.cs
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator_MarkupCompile.cache
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator_MarkupCompile.lref
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\MainWindow.baml
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator.g.resources
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator.Properties.Resources.resources
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator.csproj.GenerateResource.cache
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator.exe
+C:\Users\z00470na\source\repos\Calculator - Copy\Calculator\obj\Release\Calculator.pdb
